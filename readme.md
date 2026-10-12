@@ -8,7 +8,7 @@
 
 Nombre del proyecto: Gestor de Turnos Laborales — Grano Dorado (ITM)
 
-Equipo de trabajo: Pendiente de información (los integrantes no aparecen en el ZIP, el Story Map ni las HU)
+Equipo de trabajo: Luis Carlos Marin Mayo - Kevin Stiven Montoya Suarez - Nikole Herrera Ruiz - José Manuel Gutierrez Sosa - Jorge Andrés Carvajal Sepúlveda
 
 Asignatura: Diseño de sistemas de información (según el material del curso «Modelo C4»)
 
