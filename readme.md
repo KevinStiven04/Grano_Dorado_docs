@@ -10,9 +10,9 @@ Nombre del proyecto: Gestor de Turnos Laborales — Grano Dorado (ITM)
 
 Equipo de trabajo: Luis Carlos Marin Mayo - Kevin Stiven Montoya Suarez - Nikole Herrera Ruiz - José Manuel Gutierrez Sosa - Jorge Andrés Carvajal Sepúlveda
 
-Asignatura: Diseño de sistemas de información (según el material del curso «Modelo C4»)
+Asignatura: Diseño de sistemas de información
 
-Docente: Alexandra Guerrero Bocanegra (según el material del curso «Aspectos importantes del Modelo C4»)
+Docente: Alexandra Guerrero Bocanegra
 
 Fecha: 12 de octubre de 2026
 
