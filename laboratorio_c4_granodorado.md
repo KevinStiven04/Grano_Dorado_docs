@@ -30,9 +30,6 @@
 | Notificaciones | HU-02, HU-03, HU-07, HU-10, HU-13, HU-17 |
 | Acceso a datos | Todas |
 
-### 3.2 Aplicación
-
-![C4 Nivel 3 - Componentes de la aplicación](diagramas/nivel3_componentes_app.png)
 
 ## 4. C4 Nivel 4 - Código
 
