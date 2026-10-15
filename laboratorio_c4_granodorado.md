@@ -217,18 +217,3 @@
 - **HU-10 Solicitar cambio de turno** y **HU-13 Aprobar cambios de turno:** `avisarSolicitud()`.
 - **HU-17 Notificaciones de incumplimientos:** `avisarIncumplimiento()`.
 
-### 4.11 Aplicación: MVVM con Observer en Novedades
-
-**Diagrama**
-
-![C4 Nivel 4 - MVVM y Observer](diagramas/nivel4_codigo_mvvm_observer.png)
-
-**Patrón GoF utilizado**
-
-**Patrón:** Observer.
-
-**Justificación:** la pantalla debe actualizarse cada vez que cambia su estado (por ejemplo, el contador de novedades pendientes). `NovedadesViewModel` expone un `StateFlow` (sujeto) y `NovedadesScreen` se suscribe con `collectAsState()` (observador), así que la pantalla se vuelve a dibujar sin que el ViewModel la conozca.
-
-**Historias de usuario relacionadas**
-
-- **HU-11 Reportar novedades**, **HU-12 Ver novedades** y **HU-14 Novedades de empleado:** pantalla Novedades.
