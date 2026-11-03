@@ -1,24 +1,24 @@
 # Épica 4 — Gestión de novedades
 
-**Resumen:** Agrupa lo que atiende el Administrador de Sucursal: ver las novedades (HU-12), aprobar los cambios de turno (HU-13) y reportar las novedades que el empleado no registró (HU-14).
+**Resumen:** Agrupa lo que atiende el Administrador de Sucursal: ver las novedades (HU-11), aprobar los cambios de turno (HU-12) y reportar las novedades que el empleado no registró (HU-13).
 
 *Resumen elaborado a partir de las historias de la épica; el documento original no incluye una descripción propia de esta épica.*
 
-**Línea de la épica en el documento original:** HU-12 Ver novedades · HU-13 Aprobar cambios de turno · HU-14 Reportar novedades de empleado
+**Línea de la épica en el documento original:** HU-11 Ver novedades · HU-12 Aprobar cambios de turno · HU-13 Reportar novedades de empleado
 
 ## Historias de usuario de esta épica
 
 | Sección | Identificador | Nombre |
 |---|---|---|
-| 4.1 | [HU-12](#41-hu-12--ver-novedades) | Ver novedades |
-| 4.2 | [HU-13](#42-hu-13--aprobar-cambios-de-turno) | Aprobar cambios de turno |
-| 4.3 | [HU-14](#43-hu-14--reportar-novedades-de-empleado) | Reportar novedades de empleado |
+| 4.1 | [HU-11](#41-hu-11--ver-novedades) | Ver novedades |
+| 4.2 | [HU-12](#42-hu-12--aprobar-cambios-de-turno) | Aprobar cambios de turno |
+| 4.3 | [HU-13](#43-hu-13--reportar-novedades-de-empleado) | Reportar novedades de empleado |
 
 ---
 
-## 4.1 HU-12 — Ver novedades
+## 4.1 HU-11 — Ver novedades
 
-**HU-12**
+**HU-11**
 
 ### Épica
 
@@ -105,7 +105,7 @@ Que el empleado pueda reportar una novedad no sirve de nada si nadie la lee. Hoy
   Y en esa novedad declaró la hora real de salida "20:30"
 ```
 
-#### CA-12.1 Bandeja de novedades de la sucursal
+#### CA-11.1 Bandeja de novedades de la sucursal
 
 ```gherkin
   Cuando abro la bandeja de novedades
@@ -114,7 +114,7 @@ Que el empleado pueda reportar una novedad no sirve de nada si nadie la lee. Hoy
   Y la pantalla muestra el contador "1 novedad pendiente de revisión"
 ```
 
-#### CA-12.2 Detalle con la diferencia frente a lo programado
+#### CA-11.2 Detalle con la diferencia frente a lo programado
 
 ```gherkin
   Cuando abro el detalle de esa novedad
@@ -125,7 +125,7 @@ Que el empleado pueda reportar una novedad no sirve de nada si nadie la lee. Hoy
   Y el dato "Reportada por Ana Pérez el 08/09/2026 a las 20:35"
 ```
 
-#### CA-12.3 Revisión con comentario visible para el empleado
+#### CA-11.3 Revisión con comentario visible para el empleado
 
 ```gherkin
   Cuando escribo el comentario "Confirmado, avisó por teléfono"
@@ -136,7 +136,7 @@ Que el empleado pueda reportar una novedad no sirve de nada si nadie la lee. Hoy
   Y el contador de pendientes pasa a "0 novedades pendientes de revisión"
 ```
 
-#### CA-12.4 Una novedad revisada no se reabre ni se altera
+#### CA-11.4 Una novedad revisada no se reabre ni se altera
 
 ```gherkin
   Dado que la novedad está en estado "Revisada"
@@ -146,7 +146,7 @@ Que el empleado pueda reportar una novedad no sirve de nada si nadie la lee. Hoy
   Y el turno del "2026-09-08" sigue registrado como "Cierre, 14:00 a 22:00"
 ```
 
-#### CA-12.5 Filtros de la bandeja
+#### CA-11.5 Filtros de la bandeja
 
 ```gherkin
   Dado que mi sucursal tiene novedades de varios empleados y tipos
@@ -157,7 +157,7 @@ Que el empleado pueda reportar una novedad no sirve de nada si nadie la lee. Hoy
   Y al limpiar los filtros vuelve a mostrarse el día en curso
 ```
 
-#### CA-12.6 Alcance por sucursal y por rol
+#### CA-11.6 Alcance por sucursal y por rol
 
 ```gherkin
   Dado que existen novedades en "Centro", "Norte" y "Sur"
@@ -211,9 +211,9 @@ Que el empleado pueda reportar una novedad no sirve de nada si nadie la lee. Hoy
 
 ---
 
-## 4.2 HU-13 — Aprobar cambios de turno
+## 4.2 HU-12 — Aprobar cambios de turno
 
-**HU-13**
+**HU-12**
 
 ### Épica
 
@@ -302,7 +302,7 @@ El caso describe el intercambio de turnos como un proceso caótico en el que el 
   Y "Sofía Ramos" ya aceptó la solicitud
 ```
 
-#### CA-13.1 Bandeja de solicitudes pendientes
+#### CA-12.1 Bandeja de solicitudes pendientes
 
 ```gherkin
   Cuando abro la bandeja de cambios de turno
@@ -312,7 +312,7 @@ El caso describe el intercambio de turnos como un proceso caótico en el que el 
   Y una solicitud aún sin respuesta del compañero NO aparece en la bandeja
 ```
 
-#### CA-13.2 Detalle de la solicitud
+#### CA-12.2 Detalle de la solicitud
 
 ```gherkin
   Cuando abro el detalle de la solicitud
@@ -322,7 +322,7 @@ El caso describe el intercambio de turnos como un proceso caótico en el que el 
   Y el resultado de las validaciones que el sistema ya verificó
 ```
 
-#### CA-13.3 Aprobación y aplicación del intercambio
+#### CA-12.3 Aprobación y aplicación del intercambio
 
 ```gherkin
   Cuando presiono el botón "Aprobar"
@@ -336,7 +336,7 @@ El caso describe el intercambio de turnos como un proceso caótico en el que el 
   Y la decisión queda registrada con mi nombre y la fecha y hora
 ```
 
-#### CA-13.4 Rechazo con motivo obligatorio
+#### CA-12.4 Rechazo con motivo obligatorio
 
 ```gherkin
   Cuando presiono "Rechazar" sin escribir el motivo
@@ -348,7 +348,7 @@ El caso describe el intercambio de turnos como un proceso caótico en el que el 
   Y las dos empleadas pueden leer ese motivo
 ```
 
-#### CA-13.5 Revalidación en el momento de aprobar
+#### CA-12.5 Revalidación en el momento de aprobar
 
 ```gherkin
   Dado que después de la aceptación se asignó a "Ana Pérez" otro turno
@@ -360,7 +360,7 @@ El caso describe el intercambio de turnos como un proceso caótico en el que el 
   Y la solicitud permanece pendiente para que la resuelva
 ```
 
-#### CA-13.6 Solicitud vencida y solicitud ya resuelta
+#### CA-12.6 Solicitud vencida y solicitud ya resuelta
 
 ```gherkin
   Dado que el turno del "2026-09-17" ya inició sin que yo resolviera
@@ -371,7 +371,7 @@ El caso describe el intercambio de turnos como un proceso caótico en el que el 
   Y una solicitud ya resuelta tampoco ofrece opción de reabrirla
 ```
 
-#### CA-13.7 Alcance por sucursal y conflicto de interés
+#### CA-12.7 Alcance por sucursal y conflicto de interés
 
 ```gherkin
   Dado que existen solicitudes en "Centro", "Norte" y "Sur"
@@ -425,9 +425,9 @@ El caso describe el intercambio de turnos como un proceso caótico en el que el 
 
 ---
 
-## 4.3 HU-14 — Reportar novedades de empleado
+## 4.3 HU-13 — Reportar novedades de empleado
 
-**HU-14**
+**HU-13**
 
 ### Épica
 
@@ -517,7 +517,7 @@ Lo que el empleado no reporta simplemente no existe para el sistema, y el vacío
   Y la fecha y hora actuales son "2026-09-09 09:00"
 ```
 
-#### CA-14.1 Registro de una novedad que el empleado no reportó
+#### CA-13.1 Registro de una novedad que el empleado no reportó
 
 ```gherkin
   Cuando selecciono a "Ana Pérez" y su turno del "2026-09-08"
@@ -533,7 +533,7 @@ Lo que el empleado no reporta simplemente no existe para el sistema, y el vacío
   Y "Ana Pérez" puede consultarla en su lista de novedades
 ```
 
-#### CA-14.2 Registro de una ausencia
+#### CA-13.2 Registro de una ausencia
 
 ```gherkin
   Dado que "Diego Salas" no se presentó a su turno del "2026-09-08"
@@ -544,7 +544,7 @@ Lo que el empleado no reporta simplemente no existe para el sistema, y el vacío
   Y el turno programado de "Diego Salas" no se modifica
 ```
 
-#### CA-14.3 No se altera lo que reportó el empleado
+#### CA-13.3 No se altera lo que reportó el empleado
 
 ```gherkin
   Dado que "Ana Pérez" ya reportó una novedad de tipo "Salida antes
@@ -557,7 +557,7 @@ Lo que el empleado no reporta simplemente no existe para el sistema, y el vacío
     de solo lectura
 ```
 
-#### CA-14.4 Campos obligatorios y turnos futuros
+#### CA-13.4 Campos obligatorios y turnos futuros
 
 ```gherkin
   Cuando registro una novedad sin escribir la descripción
@@ -567,7 +567,7 @@ Lo que el empleado no reporta simplemente no existe para el sistema, y el vacío
   Y en ninguno de los dos casos se crea una novedad
 ```
 
-#### Esquema del escenario: CA-14.5 Coherencia del horario real
+#### Esquema del escenario: CA-13.5 Coherencia del horario real
 
 ```gherkin
   Dado que el turno programado fue de "14:00" a "22:00"
@@ -581,7 +581,7 @@ Lo que el empleado no reporta simplemente no existe para el sistema, y el vacío
     | Ampliación del turno | 23:00 | La hora no puede superar las 22:00 |
 ```
 
-#### CA-14.6 Plazo y alcance por sucursal
+#### CA-13.6 Plazo y alcance por sucursal
 
 ```gherkin
   Dado que el turno de "Ana Pérez" del "2026-09-06" terminó hace 3 días

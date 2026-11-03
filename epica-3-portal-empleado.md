@@ -1,24 +1,24 @@
 # Épica 3 — Portal de empleado
 
-**Resumen:** Agrupa lo que hace el empleado desde su portal: ver su horario asignado (HU-09), solicitar un cambio de turno (HU-10) y reportar novedades (HU-11).
+**Resumen:** Agrupa lo que hace el empleado desde su portal: ver su horario asignado (HU-08), solicitar un cambio de turno (HU-09) y reportar novedades (HU-10).
 
 *Resumen elaborado a partir de las historias de la épica; el documento original no incluye una descripción propia de esta épica.*
 
-**Línea de la épica en el documento original:** HU-09 Ver horario asignado · HU-10 Solicitar cambio de turno · HU-11 Reportar novedades
+**Línea de la épica en el documento original:** HU-08 Ver horario asignado · HU-09 Solicitar cambio de turno · HU-10 Reportar novedades
 
 ## Historias de usuario de esta épica
 
 | Sección | Identificador | Nombre |
 |---|---|---|
-| 3.1 | [HU-09](#31-hu-09--ver-horario-asignado) | Ver horario asignado |
-| 3.2 | [HU-10](#32-hu-10--solicitar-cambio-de-turno) | Solicitar cambio de turno |
-| 3.3 | [HU-11](#33-hu-11--reportar-novedades) | Reportar novedades |
+| 3.1 | [HU-08](#31-hu-08--ver-horario-asignado) | Ver horario asignado |
+| 3.2 | [HU-09](#32-hu-09--solicitar-cambio-de-turno) | Solicitar cambio de turno |
+| 3.3 | [HU-10](#33-hu-10--reportar-novedades) | Reportar novedades |
 
 ---
 
-## 3.1 HU-09 — Ver horario asignado
+## 3.1 HU-08 — Ver horario asignado
 
-**HU-09**
+**HU-08**
 
 ### Épica
 
@@ -99,7 +99,7 @@ Hoy el empleado recibe su horario un domingo por la noche, dentro de un grupo do
   Y la semana del 14 al 20 de septiembre de 2026 está publicada
 ```
 
-#### CA-09.1 Consulta del horario de la semana en curso
+#### CA-08.1 Consulta del horario de la semana en curso
 
 ```gherkin
   Cuando abro la pantalla "Mi horario"
@@ -109,7 +109,7 @@ Hoy el empleado recibe su horario un domingo por la noche, dentro de un grupo do
   Y la pantalla muestra el total "30 h 00 min asignadas esta semana"
 ```
 
-#### CA-09.2 Días sin turno asignado
+#### CA-08.2 Días sin turno asignado
 
 ```gherkin
   Dado que no tengo ningún turno el "Miércoles 16"
@@ -118,7 +118,7 @@ Hoy el empleado recibe su horario un domingo por la noche, dentro de un grupo do
   Y esa casilla no aparece vacía
 ```
 
-#### CA-09.3 Solo veo mi propio horario
+#### CA-08.3 Solo veo mi propio horario
 
 ```gherkin
   Cuando abro la pantalla "Mi horario"
@@ -127,7 +127,7 @@ Hoy el empleado recibe su horario un domingo por la noche, dentro de un grupo do
     otro empleado ni la malla de la sucursal
 ```
 
-#### CA-09.4 Una semana sin publicar no es visible
+#### CA-08.4 Una semana sin publicar no es visible
 
 ```gherkin
   Dado que la semana del 21 al 27 de septiembre aún no ha sido publicada
@@ -137,7 +137,7 @@ Hoy el empleado recibe su horario un domingo por la noche, dentro de un grupo do
   Y no se muestra ningún turno de esa semana
 ```
 
-#### CA-09.5 Cambio en un horario ya publicado
+#### CA-08.5 Cambio en un horario ya publicado
 
 ```gherkin
   Dado que mi turno del "Jueves 17" cambió de "Apertura" a "Cierre"
@@ -147,7 +147,7 @@ Hoy el empleado recibe su horario un domingo por la noche, dentro de un grupo do
   Y esa jornada aparece señalada como "Modificado el 09/09/2026 a las 11:15"
 ```
 
-#### CA-09.6 Consulta de una semana anterior y solo lectura
+#### CA-08.6 Consulta de una semana anterior y solo lectura
 
 ```gherkin
   Cuando retrocedo a la semana del 7 al 13 de septiembre
@@ -156,7 +156,7 @@ Hoy el empleado recibe su horario un domingo por la noche, dentro de un grupo do
     modificar o eliminar un turno
 ```
 
-#### CA-09.7 Consulta desde el teléfono
+#### CA-08.7 Consulta desde el teléfono
 
 ```gherkin
   Dado que abro la aplicación en una pantalla de 360 píxeles de ancho
@@ -205,9 +205,9 @@ Hoy el empleado recibe su horario un domingo por la noche, dentro de un grupo do
 
 ---
 
-## 3.2 HU-10 — Solicitar cambio de turno
+## 3.2 HU-09 — Solicitar cambio de turno
 
-**HU-10**
+**HU-09**
 
 ### Épica
 
@@ -296,7 +296,7 @@ El caso describe este proceso como caótico: cuando un empleado se enferma o nec
     "Apertura" (06:00 a 14:00) el "2026-09-18"
 ```
 
-#### CA-10.1 Solicitud de intercambio y aceptación del compañero
+#### CA-09.1 Solicitud de intercambio y aceptación del compañero
 
 ```gherkin
   Cuando selecciono mi turno del "2026-09-17" y presiono "Solicitar cambio"
@@ -311,7 +311,7 @@ El caso describe este proceso como caótico: cuando un empleado se enferma o nec
   Y mi horario y el de ella todavía no cambian
 ```
 
-#### CA-10.2 Aprobación del administrador y aplicación del intercambio
+#### CA-09.2 Aprobación del administrador y aplicación del intercambio
 
 ```gherkin
   Dado que la solicitud está en estado "Aceptada por el compañero"
@@ -324,7 +324,7 @@ El caso describe este proceso como caótico: cuando un empleado se enferma o nec
   Y ambas recibimos el aviso del cambio
 ```
 
-#### CA-10.3 Rechazo con motivo
+#### CA-09.3 Rechazo con motivo
 
 ```gherkin
   Dado que la solicitud está en estado "Solicitada"
@@ -337,7 +337,7 @@ El caso describe este proceso como caótico: cuando un empleado se enferma o nec
   Y mi horario no cambia
 ```
 
-#### CA-10.4 Turnos no elegibles para el intercambio
+#### CA-09.4 Turnos no elegibles para el intercambio
 
 ```gherkin
   Dado que "Carlos Ruiz" es Cajero de "Norte"
@@ -349,7 +349,7 @@ El caso describe este proceso como caótico: cuando un empleado se enferma o nec
   Y no contiene el turno de "Marta León" del "2026-09-18"
 ```
 
-#### CA-10.5 Intercambio que rompe el descanso mínimo
+#### CA-09.5 Intercambio que rompe el descanso mínimo
 
 ```gherkin
   Dado que aceptar el turno de "Sofía Ramos" me dejaría con 8 horas entre
@@ -360,7 +360,7 @@ El caso describe este proceso como caótico: cuando un empleado se enferma o nec
   Y no se crea ninguna solicitud
 ```
 
-#### CA-10.6 Solicitud fuera de plazo y solicitud vencida
+#### CA-09.6 Solicitud fuera de plazo y solicitud vencida
 
 ```gherkin
   Dado que mi turno del "2026-09-17" inicia en 10 horas
@@ -372,7 +372,7 @@ El caso describe este proceso como caótico: cuando un empleado se enferma o nec
     pasa a estado "Vencida" y deja de poder aprobarse
 ```
 
-#### CA-10.7 Cancelación por el solicitante y bloqueo de solicitudes duplicadas
+#### CA-09.7 Cancelación por el solicitante y bloqueo de solicitudes duplicadas
 
 ```gherkin
   Dado que mi solicitud está en estado "Solicitada"
@@ -428,9 +428,9 @@ El caso describe este proceso como caótico: cuando un empleado se enferma o nec
 
 ---
 
-## 3.3 HU-11 — Reportar novedades
+## 3.3 HU-10 — Reportar novedades
 
-**HU-11**
+**HU-10**
 
 ### Épica
 
@@ -517,7 +517,7 @@ Hoy el horario programado y el horario realmente trabajado son dos cosas distint
   Y la fecha actual es "2026-09-18"
 ```
 
-#### CA-11.1 Reporte de una salida antes de la hora
+#### CA-10.1 Reporte de una salida antes de la hora
 
 ```gherkin
   Cuando selecciono mi turno del "2026-09-17" y presiono "Reportar novedad"
@@ -531,7 +531,7 @@ Hoy el horario programado y el horario realmente trabajado son dos cosas distint
   Y el turno del "2026-09-17" sigue registrado como "Cierre, 14:00 a 22:00"
 ```
 
-#### CA-11.2 Reporte de una ampliación del turno
+#### CA-10.2 Reporte de una ampliación del turno
 
 ```gherkin
   Dado que trabajé el turno "Apertura" (06:00 a 14:00) el "2026-09-17"
@@ -540,7 +540,7 @@ Hoy el horario programado y el horario realmente trabajado son dos cosas distint
   Entonces la novedad queda en estado "Reportada"
 ```
 
-#### Esquema del escenario: CA-11.3 Validación del horario reportado
+#### Esquema del escenario: CA-10.3 Validación del horario reportado
 
 ```gherkin
   Dado que mi turno programado fue de "14:00" a "22:00"
@@ -555,7 +555,7 @@ Hoy el horario programado y el horario realmente trabajado son dos cosas distint
     | Ampliación del turno | 23:00 | La hora de salida no puede superar las 22:00 |
 ```
 
-#### CA-11.4 Campos obligatorios y plazo para reportar
+#### CA-10.4 Campos obligatorios y plazo para reportar
 
 ```gherkin
   Cuando envío una novedad sin seleccionar el tipo
@@ -567,7 +567,7 @@ Hoy el horario programado y el horario realmente trabajado son dos cosas distint
   Y en ninguno de los casos se crea una novedad
 ```
 
-#### CA-11.5 Revisión por el administrador
+#### CA-10.5 Revisión por el administrador
 
 ```gherkin
   Dado que mi novedad está en estado "Reportada"
@@ -580,7 +580,7 @@ Hoy el horario programado y el horario realmente trabajado son dos cosas distint
   Y desde ese momento no puedo modificar ni eliminar la novedad
 ```
 
-#### CA-11.6 Alcance de la bandeja del administrador
+#### CA-10.6 Alcance de la bandeja del administrador
 
 ```gherkin
   Dado que existen novedades de empleados de "Centro", "Norte" y "Sur"

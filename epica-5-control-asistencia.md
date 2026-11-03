@@ -4,16 +4,16 @@
 
 *Tomado del campo «Descripción» del Marco de la Épica 5 (sección 5.1 del documento original).*
 
-**Línea de la épica en el documento original:** HU-15 Marcar asistencia · HU-16 Marcar asistencia (supervisor) · HU-17 Notificaciones de incumplimientos
+**Línea de la épica en el documento original:** HU-14 Marcar asistencia · HU-15 Marcar asistencia (supervisor) · HU-16 Notificaciones de incumplimientos
 
 ## Historias de usuario de esta épica
 
 | Sección | Identificador | Nombre |
 |---|---|---|
 | 5.1 | — | [Marco de la Épica 5](#51-marco-de-la-épica-5) (contexto de la épica, no es una historia) |
-| 5.2 | [HU-15](#52-hu-15--marcar-asistencia-al-turno) | Marcar asistencia al turno |
-| 5.3 | [HU-16](#53-hu-16--marcar-asistencia-al-turno-registro-por-el-supervisor) | Marcar asistencia al turno (registro por el supervisor) |
-| 5.4 | [HU-17](#54-hu-17--notificaciones-de-incumplimientos) | Notificaciones de incumplimientos |
+| 5.2 | [HU-14](#52-hu-14--marcar-asistencia-al-turno) | Marcar asistencia al turno |
+| 5.3 | [HU-15](#53-hu-15--marcar-asistencia-al-turno-registro-por-el-supervisor) | Marcar asistencia al turno (registro por el supervisor) |
+| 5.4 | [HU-16](#54-hu-16--notificaciones-de-incumplimientos) | Notificaciones de incumplimientos |
 
 ---
 
@@ -42,9 +42,9 @@ Grano Dorado tiene 3 sucursales y 45 empleados, con atención de lunes a domingo
 
 ---
 
-## 5.2 HU-15 — Marcar asistencia al turno
+## 5.2 HU-14 — Marcar asistencia al turno
 
-**HU-15**
+**HU-14**
 
 ### Épica
 
@@ -120,7 +120,7 @@ Hoy la compañía no tiene forma de llevar el control del tiempo que un empleado
   Dado que inicié sesión como la empleada "Ana Pérez", Barista de "Centro" Y tengo asignado el turno "Apertura" (06:00 a 14:00) el día de hoy Y ese turno define un descanso de 30 minutos
 ```
 
-#### CA-15.1 Secuencia completa de marcación
+#### CA-14.1 Secuencia completa de marcación
 
 ```gherkin
   Cuando a las "05:58" presiono "Iniciar turno"
@@ -133,7 +133,7 @@ Hoy la compañía no tiene forma de llevar el control del tiempo que un empleado
   Y muestra "Tiempo efectivo trabajado: 7 h 37 min"
 ```
 
-#### CA-15.2 Inicio marcado después de la hora programada
+#### CA-14.2 Inicio marcado después de la hora programada
 
 ```gherkin
   Cuando a las "06:12" presiono "Iniciar turno"
@@ -142,7 +142,7 @@ Hoy la compañía no tiene forma de llevar el control del tiempo que un empleado
   Y la marca queda registrada de todas formas
 ```
 
-#### CA-15.3 Marcas fuera de secuencia
+#### CA-14.3 Marcas fuera de secuencia
 
 ```gherkin
 Esquema del escenario:
@@ -159,7 +159,7 @@ Esquema del escenario:
    | Turno Cerrado | Iniciar turno | Este turno ya fue finalizado |
 ```
 
-#### CA-15.4 Día sin turno asignado o en descanso
+#### CA-14.4 Día sin turno asignado o en descanso
 
 ```gherkin
   Dado que hoy no tengo ningún turno asignado
@@ -170,7 +170,7 @@ Esquema del escenario:
     descanso, vacaciones o incapacidad
 ```
 
-#### CA-15.5 La hora la determina el servidor
+#### CA-14.5 La hora la determina el servidor
 
 ```gherkin
   Dado que el reloj de mi teléfono está adelantado 45 minutos
@@ -179,7 +179,7 @@ Esquema del escenario:
   Y no con la hora que muestra mi teléfono
 ```
 
-#### CA-15.6 Las marcas no se pueden alterar y quedan consultables
+#### CA-14.6 Las marcas no se pueden alterar y quedan consultables
 
 ```gherkin
   Dado que registré el inicio de mi turno
@@ -229,9 +229,9 @@ Esquema del escenario:
 
 ---
 
-## 5.3 HU-16 — Marcar asistencia al turno (registro por el supervisor)
+## 5.3 HU-15 — Marcar asistencia al turno (registro por el supervisor)
 
-**HU-16**
+**HU-15**
 
 ### Épica
 
@@ -302,7 +302,7 @@ Olvidar una marca es lo más común en cualquier control de asistencia, sobre to
     (06:00 a 14:00) el "2026-09-08" Y la fecha y hora actuales son "2026-09-08 15:00"
 ```
 
-#### CA-16.1 Registro de una marca de fin que el empleado olvidó
+#### CA-15.1 Registro de una marca de fin que el empleado olvidó
 
 ```gherkin
   Dado que "Ana Pérez" marcó el inicio a las "06:02" y no marcó el fin
@@ -318,7 +318,7 @@ Olvidar una marca es lo más común en cualquier control de asistencia, sobre to
   Y la marca de inicio sigue señalada como registrada por la empleada
 ```
 
-#### CA-16.2 No se puede alterar una marca hecha por el empleado
+#### CA-15.2 No se puede alterar una marca hecha por el empleado
 
 ```gherkin
   Dado que "Ana Pérez" marcó el inicio a las "06:02"
@@ -327,7 +327,7 @@ Olvidar una marca es lo más común en cualquier control de asistencia, sobre to
   Y no se ofrece ninguna opción para modificarla ni eliminarla
 ```
 
-#### CA-16.3 El motivo es obligatorio
+#### CA-15.3 El motivo es obligatorio
 
 ```gherkin
   Cuando registro una marca sin escribir el motivo
@@ -336,7 +336,7 @@ Olvidar una marca es lo más común en cualquier control de asistencia, sobre to
   Y no se registra ninguna marca
 ```
 
-#### Esquema del escenario: CA-16.4 Coherencia de la hora registrada
+#### Esquema del escenario: CA-15.4 Coherencia de la hora registrada
 
 ```gherkin
   Dado que el turno programado fue de "06:00" a "14:00"
@@ -350,13 +350,13 @@ Olvidar una marca es lo más común en cualquier control de asistencia, sobre to
     | Fin | 22:30 | La hora no puede superar las 22:00 |
 ```
 
-#### CA-16.5 Secuencia y turnos futuros
+#### CA-15.5 Secuencia y turnos futuros
 
 ```gherkin
   Dado que "Diego Salas" no tiene ninguna marca en su turno de hoy Cuando intento registrar únicamente su marca de fin Entonces el sistema muestra "Primero debes registrar el inicio del turno." Y al intentar registrar marcas de un turno programado para mañana el sistema muestra "Este turno todavía no ha iniciado."  Y en ninguno de los dos casos se registra una marca
 ```
 
-#### CA-16.6 Plazo de 48 horas
+#### CA-15.6 Plazo de 48 horas
 
 ```gherkin
   Dado que el turno de "Ana Pérez" del "2026-09-06" terminó hace 3 días
@@ -366,7 +366,7 @@ Olvidar una marca es lo más común en cualquier control de asistencia, sobre to
   Y no se registra ninguna marca
 ```
 
-#### CA-16.7 Alcance por sucursal
+#### CA-15.7 Alcance por sucursal
 
 ```gherkin
   Dado que existen turnos de empleados de "Centro", "Norte" y "Sur"
@@ -417,9 +417,9 @@ Olvidar una marca es lo más común en cualquier control de asistencia, sobre to
 
 ---
 
-## 5.4 HU-17 — Notificaciones de incumplimientos
+## 5.4 HU-16 — Notificaciones de incumplimientos
 
-**HU-17 (rotulada HU-15 en el documento recibido)**
+**HU-16 (rotulada HU-15 en el documento recibido, con la numeración anterior)**
 
 ### Épica
 
@@ -493,7 +493,7 @@ Este es el punto donde la asistencia deja de ser un archivo y se vuelve una herr
   Dado que inicié sesión como "Carla Ríos", Administradora de Sucursal de "Centro" Y "Ana Pérez" tiene asignado y publicado el turno "Apertura"  (06:00 a 14:00) del día de hoy
 ```
 
-#### CA-17.1 Notificación por marca de inicio ausente
+#### CA-16.1 Notificación por marca de inicio ausente
 
 ```gherkin
   Dado que son las "06:15" y "Ana Pérez" no ha marcado el inicio
@@ -506,7 +506,7 @@ Este es el punto donde la asistencia deja de ser un archivo y se vuelve una herr
     el umbral
 ```
 
-#### CA-17.2 El aviso no se repite
+#### CA-16.2 El aviso no se repite
 
 ```gherkin
   Dado que ya se generó el incumplimiento de inicio de ese turno
@@ -515,7 +515,7 @@ Este es el punto donde la asistencia deja de ser un archivo y se vuelve una herr
   Y recibo exactamente 1 notificación por ese turno
 ```
 
-#### CA-17.3 Cierre automático cuando el empleado marca
+#### CA-16.3 Cierre automático cuando el empleado marca
 
 ```gherkin
   Dado que el incumplimiento está en estado "Pendiente"
@@ -525,7 +525,7 @@ Este es el punto donde la asistencia deja de ser un archivo y se vuelve una herr
   Y no requiere ninguna acción de mi parte
 ```
 
-#### CA-17.4 Atención manual del incumplimiento
+#### CA-16.4 Atención manual del incumplimiento
 
 ```gherkin
   Dado que el incumplimiento está en estado "Pendiente"
@@ -537,7 +537,7 @@ Este es el punto donde la asistencia deja de ser un archivo y se vuelve una herr
   Y el turno programado de "Ana Pérez" no se modifica
 ```
 
-#### CA-17.5 Turnos que no generan incumplimiento
+#### CA-16.5 Turnos que no generan incumplimiento
 
 ```gherkin
   Dado que la semana del turno de "Diego Salas" no ha sido publicada
@@ -547,7 +547,7 @@ Este es el punto donde la asistencia deja de ser un archivo y se vuelve una herr
   Ni para "Marta León"
 ```
 
-#### CA-17.6 Alcance por sucursal
+#### CA-16.6 Alcance por sucursal
 
 ```gherkin
   Dado que hay incumplimientos en "Centro", "Norte" y "Sur"

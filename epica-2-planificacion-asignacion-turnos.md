@@ -1,6 +1,6 @@
 # Épica 2 — Planificación y asignación de turnos
 
-**Resumen:** Agrupa la definición del catálogo de turnos (HU-06), la asignación de turnos a empleados con validación de conflictos (HU-07) y la visualización de los horarios por sucursal (HU-08).
+**Resumen:** Agrupa la definición del catálogo de turnos (HU-05), la asignación de turnos a empleados con validación de conflictos (HU-06) y la visualización de los horarios por sucursal (HU-07).
 
 *Resumen elaborado a partir de las historias de la épica; el documento original no incluye una descripción propia de esta épica.*
 
@@ -8,15 +8,15 @@
 
 | Sección | Identificador | Nombre |
 |---|---|---|
-| 2.1 | [HU-06](#21-hu-06--creación-de-turnos) | Creación de turnos |
-| 2.2 | [HU-07](#22-hu-07--asignación-de-turnos) | Asignación de turnos |
-| 2.3 | [HU-08](#23-hu-08--visualización-de-horarios-por-sucursal) | Visualización de horarios por sucursal |
+| 2.1 | [HU-05](#21-hu-05--creación-de-turnos) | Creación de turnos |
+| 2.2 | [HU-06](#22-hu-06--asignación-de-turnos) | Asignación de turnos |
+| 2.3 | [HU-07](#23-hu-07--visualización-de-horarios-por-sucursal) | Visualización de horarios por sucursal |
 
 ---
 
-## 2.1 HU-06 — Creación de turnos
+## 2.1 HU-05 — Creación de turnos
 
-**HU-06**
+**HU-05**
 
 ### Épica
 
@@ -28,7 +28,7 @@ Creación de turnos
 
 ### Prioridad
 
-HU-07 no puede asignar nada sin un catálogo de turnos.
+HU-06 no puede asignar nada sin un catálogo de turnos.
 
 ### Actor
 
@@ -64,7 +64,7 @@ Hoy cada horario se escribe a mano en Excel, celda por celda, lo que obliga a re
 - Turnos diferentes por sucursal: el catálogo es único y compartido.
 - Reglas de remuneración, recargos nocturnos, dominicales o festivos.
 - Plantillas de semana completa o patrones rotativos.
-- Definición de la cobertura mínima requerida por franja (pertenece a HU-07 / HU-08).
+- Definición de la cobertura mínima requerida por franja (pertenece a HU-06 / HU-07).
 
 ### Reglas de negocio
 
@@ -87,7 +87,7 @@ Hoy cada horario se escribe a mano en Excel, celda por celda, lo que obliga a re
   Y la franja de operación de Grano Dorado es de 06:00 a 22:00
 ```
 
-#### CA-06.1 Creación exitosa de un turno con descanso
+#### CA-05.1 Creación exitosa de un turno con descanso
 
 ```gherkin
   Cuando registro el turno "Apertura" con inicio "06:00", fin "14:00"
@@ -100,7 +100,7 @@ Hoy cada horario se escribe a mano en Excel, celda por celda, lo que obliga a re
   Y se agrega al historial un registro "TURNO_CREADO" con el usuario ejecutor
 ```
 
-#### Esquema del escenario: CA-06.2 Rango horario y coherencia de las horas
+#### Esquema del escenario: CA-05.2 Rango horario y coherencia de las horas
 
 ```gherkin
   Cuando registro un turno con inicio "<inicio>" y fin "<fin>"
@@ -113,7 +113,7 @@ Hoy cada horario se escribe a mano en Excel, celda por celda, lo que obliga a re
     | 18:00 | 09:00 | La hora de fin debe ser posterior a la hora de inicio |
 ```
 
-#### CA-06.3 Descanso fuera del rango del turno
+#### CA-05.3 Descanso fuera del rango del turno
 
 ```gherkin
   Dado que registro el turno "Cierre" con inicio "14:00" y fin "22:00"
@@ -123,7 +123,7 @@ Hoy cada horario se escribe a mano en Excel, celda por celda, lo que obliga a re
   Y no se crea ningún turno
 ```
 
-#### CA-06.4 Descansos que se solapan entre sí
+#### CA-05.4 Descansos que se solapan entre sí
 
 ```gherkin
   Dado que registro el turno "Intermedio" con inicio "10:00" y fin "18:00"
@@ -132,7 +132,7 @@ Hoy cada horario se escribe a mano en Excel, celda por celda, lo que obliga a re
   Y no se crea ningún turno
 ```
 
-#### CA-06.5 Nombre de turno duplicado
+#### CA-05.5 Nombre de turno duplicado
 
 ```gherkin
   Dado que ya existe el turno "Apertura"
@@ -141,14 +141,14 @@ Hoy cada horario se escribe a mano en Excel, celda por celda, lo que obliga a re
   Y el catálogo sigue conteniendo exactamente 1 turno llamado "Apertura"
 ```
 
-#### CA-06.6 Un turno con asignaciones se inactiva, no se elimina
+#### CA-05.6 Un turno con asignaciones se inactiva, no se elimina
 
 ```gherkin
   Dado que el turno "Cierre" tiene 12 asignaciones registradas
   Cuando abro su ficha
   Entonces la acción "Eliminar" no está disponible
   Y al presionar "Inactivar" el turno pasa a estado "Inactivo"
-  Y deja de aparecer en la lista de turnos asignables de HU-07
+  Y deja de aparecer en la lista de turnos asignables de HU-06
   Y las 12 asignaciones existentes conservan su horario sin cambios
 ```
 
@@ -164,12 +164,12 @@ Hoy cada horario se escribe a mano en Excel, celda por celda, lo que obliga a re
 
 - HU-01 (sesión autenticada y matriz de permisos): solo el Administrador General accede a esta función.
 - Ninguna dependencia funcional aguas arriba: es la historia más independiente de la épica y puede iniciarse en paralelo con la Épica 1.
-- HU-07 y HU-08 dependen de ella.
+- HU-06 y HU-07 dependen de ella.
 
 ### Riesgos
 
 - Cada sucursal necesita turnos propios (por ejemplo, distinta hora de apertura), el catálogo debe llevar sucursal y cambia el modelo de datos. Mitigación: confirmar con el Administrador General antes del sprint.
-- Si existen jornadas partidas, el concepto de turno único por día se rompe y afecta a HU-07. Mitigación: revisar el Excel actual en busca de jornadas partidas.
+- Si existen jornadas partidas, el concepto de turno único por día se rompe y afecta a HU-06. Mitigación: revisar el Excel actual en busca de jornadas partidas.
 - Un catálogo demasiado granular reintroduce el trabajo manual que la historia busca eliminar. Mitigación: acordar con el Administrador General un conjunto inicial de 3 a 5 turnos.
 
 ### Datos de prueba
@@ -191,9 +191,9 @@ Hoy cada horario se escribe a mano en Excel, celda por celda, lo que obliga a re
 
 ---
 
-## 2.2 HU-07 — Asignación de turnos
+## 2.2 HU-06 — Asignación de turnos
 
-**HU-07**
+**HU-06**
 
 ### Épica
 
@@ -269,7 +269,7 @@ Este es el problema central del caso. Hoy la asignación se hace a mano en Excel
   Y la semana del 14 al 20 de septiembre de 2026 está en estado "Borrador"
 ```
 
-#### CA-07.1 Asignación exitosa de un turno
+#### CA-06.1 Asignación exitosa de un turno
 
 ```gherkin
   Cuando asigno el turno "Apertura" a "Ana Pérez" el "2026-09-14"
@@ -279,7 +279,7 @@ Este es el problema central del caso. Hoy la asignación se hace a mano en Excel
   Y se agrega a la bitácora un registro "TURNO_ASIGNADO" con el usuario ejecutor
 ```
 
-#### CA-07.2 Rechazo por día de descanso o vacaciones
+#### CA-06.2 Rechazo por día de descanso o vacaciones
 
 ```gherkin
   Dado que "Ana Pérez" tiene registrado el "2026-09-16" como día de descanso
@@ -291,7 +291,7 @@ Este es el problema central del caso. Hoy la asignación se hace a mano en Excel
     "Vacaciones" o "Incapacidad"
 ```
 
-#### CA-07.3 Rechazo por segundo turno el mismo día
+#### CA-06.3 Rechazo por segundo turno el mismo día
 
 ```gherkin
   Dado que "Ana Pérez" ya tiene asignado "Apertura" el "2026-09-14"
@@ -301,7 +301,7 @@ Este es el problema central del caso. Hoy la asignación se hace a mano en Excel
   Y no se crea ninguna asignación
 ```
 
-#### CA-07.4 Bloqueo al superar el máximo semanal
+#### CA-06.4 Bloqueo al superar el máximo semanal
 
 ```gherkin
   Dado que "Ana Pérez" acumula 38 horas efectivas asignadas en la semana
@@ -311,7 +311,7 @@ Este es el problema central del caso. Hoy la asignación se hace a mano en Excel
   Y no se crea ninguna asignación
 ```
 
-#### CA-07.5 Empleado inactivo o de otra sucursal no es asignable
+#### CA-06.5 Empleado inactivo o de otra sucursal no es asignable
 
 ```gherkin
   Dado que "Luis Gómez" tiene estado "Inactivo"
@@ -320,7 +320,7 @@ Este es el problema central del caso. Hoy la asignación se hace a mano en Excel
   Entonces la lista NO contiene a "Luis Gómez" ni a "Carlos Ruiz"
 ```
 
-#### CA-07.6 Alcance del Administrador de Sucursal
+#### CA-06.6 Alcance del Administrador de Sucursal
 
 ```gherkin
   Dado que inicié sesión con el rol "Administrador de Sucursal" de "Centro"
@@ -339,13 +339,13 @@ Este es el problema central del caso. Hoy la asignación se hace a mano en Excel
 
 ### Dependencias
 
-- HU-01 (sesión y permisos), HU-03 y HU-04 (empleados con rol, sucursal y estado vigentes) y HU-06 (catálogo de turnos).
+- HU-01 (sesión y permisos), HU-03 y HU-04 (empleados con rol, sucursal y estado vigentes) y HU-05 (catálogo de turnos).
 - Bloqueante: se requiere una historia que registre descansos, vacaciones e incapacidades. Sin ella la historia pierde su razón de ser.
-- HU-08 depende de las asignaciones que produce esta historia.
+- HU-07 depende de las asignaciones que produce esta historia.
 
 ### Riesgos
 
-- Si no existe el registro de descansos y vacaciones, HU-07 se entrega sin su validación principal y el problema H-8 permanece. Mitigación: incorporar esa historia al mismo sprint o al anterior.
+- Si no existe el registro de descansos y vacaciones, HU-06 se entrega sin su validación principal y el problema H-8 permanece. Mitigación: incorporar esa historia al mismo sprint o al anterior.
 - La normativa laboral aplicable: bloquear con límites incorrectos puede impedir programaciones legítimas o permitir jornadas irregulares. Mitigación: revisión con asesoría laboral y parámetros configurables.
 - Reglas demasiado estrictas en una cadena con 45 empleados pueden dejar franjas sin cubrir.
 - Edición simultánea del Administrador General y del Administrador de Sucursal sobre la misma semana. Mitigación: aviso de conflicto.
@@ -366,15 +366,15 @@ Este es el problema central del caso. Hoy la asignación se hace a mano en Excel
 
 **Veredicto: NO LISTA.** Cumplen: formato, valor medible, alcance, 8 criterios verificables, RNF y datos de prueba.
 
-- Bloqueante 1:no existe historia que registre descansos, vacaciones e incapacidades, y sin esos datos CA-07.2 no es implementables.
+- Bloqueante 1:no existe historia que registre descansos, vacaciones e incapacidades, y sin esos datos CA-06.2 no es implementables.
 - Bloqueante 2: Los límites de jornada, descanso mínimo y máximo semanal no están definidos ni validados jurídicamente.
-- No es independiente: depende de HU-06 y del módulo de empleados de la Épica 1.
+- No es independiente: depende de HU-05 y del módulo de empleados de la Épica 1.
 
 ---
 
-## 2.3 HU-08 — Visualización de horarios por sucursal
+## 2.3 HU-07 — Visualización de horarios por sucursal
 
-**HU-08**
+**HU-07**
 
 ### Épica
 
@@ -419,7 +419,7 @@ La descripción de la épica pide expresamente "verificar la asignación de cada
 ### Fuera de alcance
 
 - Vista del empleado sobre su propio horario: se necesita una historia aparte y es la que cierra el problema de comunicación.
-- Edición de asignaciones desde la malla: esta historia es de solo lectura (la edición es HU-07).
+- Edición de asignaciones desde la malla: esta historia es de solo lectura (la edición es HU-06).
 - Vista consolidada de las 3 sucursales en una sola pantalla.
 - Exportación a Excel o PDF e impresión.
 - Indicadores históricos, costos laborales y comparación entre semanas.
@@ -446,7 +446,7 @@ La descripción de la épica pide expresamente "verificar la asignación de cada
   Y el mínimo de cobertura configurado es de 1 empleado por franja
 ```
 
-#### CA-08.1 Despliegue de la malla semanal
+#### CA-07.1 Despliegue de la malla semanal
 
 ```gherkin
   Cuando selecciono la sucursal "Centro" y la semana del "2026-09-14"
@@ -456,7 +456,7 @@ La descripción de la épica pide expresamente "verificar la asignación de cada
   Y la malla se despliega completa en 3 segundos o menos
 ```
 
-#### CA-08.2 Días de no disponibilidad
+#### CA-07.2 Días de no disponibilidad
 
 ```gherkin
   Dado que "Ana Pérez" tiene registrado el "2026-09-16" como día de descanso
@@ -465,7 +465,7 @@ La descripción de la épica pide expresamente "verificar la asignación de cada
   Y esa celda no muestra ningún turno
 ```
 
-#### CA-08.3 Totalizador de horas efectivas por empleado
+#### CA-07.3 Totalizador de horas efectivas por empleado
 
 ```gherkin
   Dado que "Ana Pérez" tiene asignados 4 turnos de 7 h 30 min efectivas
@@ -474,7 +474,7 @@ La descripción de la épica pide expresamente "verificar la asignación de cada
   Entonces su fila muestra el total "30 h 00 min"
 ```
 
-#### CA-08.4 Estado de la semana y solo lectura
+#### CA-07.4 Estado de la semana y solo lectura
 
 ```gherkin
   Cuando abro una semana en estado "Borrador"
@@ -485,7 +485,7 @@ La descripción de la épica pide expresamente "verificar la asignación de cada
     modificar o eliminar asignaciones
 ```
 
-#### CA-08.5 Alcance por rol
+#### CA-07.5 Alcance por rol
 
 ```gherkin
   Dado que inicié sesión con el rol "Administrador de Sucursal" de "Centro"
@@ -506,17 +506,17 @@ La descripción de la épica pide expresamente "verificar la asignación de cada
 
 ### Dependencias
 
-- HU-07: sin asignaciones no hay malla que mostrar. Es la dependencia dura de esta historia.
-- HU-06 (turnos con duración efectiva) y HU-03 / HU-04 (empleados con rol, sucursal y estado).
-- El registro de descansos, vacaciones e incapacidades (SUP-19) alimenta CA-08.2.
-- La cobertura mínima por franja alimenta CA-08.3.
+- HU-06: sin asignaciones no hay malla que mostrar. Es la dependencia dura de esta historia.
+- HU-05 (turnos con duración efectiva) y HU-03 / HU-04 (empleados con rol, sucursal y estado).
+- El registro de descansos, vacaciones e incapacidades (SUP-19) alimenta CA-07.2.
+- La cobertura mínima por franja alimenta CA-07.3.
 
 ### Riesgos
 
-- Si HU-08 se entrega, pero el empleado sigue sin ver su propio horario, el problema de comunicación permanece intacto y el proyecto no cumple su promesa. Mitigación: priorizar la historia de vista del empleado en la misma release.
+- Si HU-07 se entrega, pero el empleado sigue sin ver su propio horario, el problema de comunicación permanece intacto y el proyecto no cumple su promesa. Mitigación: priorizar la historia de vista del empleado en la misma release.
 - Una malla de 20 empleados por 7 días es difícil de leer en un teléfono Mitigación: diseño con desplazamiento horizontal y vista por día en pantallas menores a 768 px.
-- Sin cobertura mínima configurada, el indicador de CA-08.3 no puede calcularse y la historia pierde su función de verificación. Mitigación: cerrar SUP-18 antes del sprint.
-- Señalar la cobertura solo por color excluye a usuarios con daltonismo. Mitigación: acompañar el color con texto, ya exigido en CA-08.3.
+- Sin cobertura mínima configurada, el indicador de CA-07.3 no puede calcularse y la historia pierde su función de verificación. Mitigación: cerrar SUP-18 antes del sprint.
+- Señalar la cobertura solo por color excluye a usuarios con daltonismo. Mitigación: acompañar el color con texto, ya exigido en CA-07.3.
 
 ### Datos de prueba
 
@@ -532,6 +532,6 @@ La descripción de la épica pide expresamente "verificar la asignación de cada
 
 **Veredicto: NO LISTA.** Cumplen: formato, valor medible, alcance, 6 criterios verificables, RNF y datos de prueba.
 
-- Bloqueante 1: Sin cobertura mínima definida, CA-08.3 no puede evaluarse y la historia deja de cumplir el "verificar" de la épica.
-- Bloqueante 2: depende por completo de HU-07, que a su vez está bloqueada. No es estimable como historia independiente.
+- Bloqueante 1: Sin cobertura mínima definida, CA-07.3 no puede evaluarse y la historia deja de cumplir el "verificar" de la épica.
+- Bloqueante 2: depende por completo de HU-06, que a su vez está bloqueada. No es estimable como historia independiente.
 - Decisión pendiente: si la vista del empleado sobre su propio horario entra en esta épica o en una posterior.
