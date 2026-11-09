@@ -19,15 +19,15 @@
 | Seguridad y permisos | HU-01, RNF-02 |
 | Módulo Autenticación | HU-01, HU-02 |
 | Módulo Empleados | HU-03, HU-04 |
-| Módulo Turnos y programación | HU-06, HU-07, HU-08, HU-09 |
-| Motor de validación de conflictos | HU-07, HU-10, HU-13 |
-| Disponibilidad | Requerido por HU-07, HU-08, HU-15, HU-17 |
-| Módulo Asistencia e incumplimientos | HU-15, HU-16, HU-17 |
-| Módulo Novedades | HU-11, HU-12, HU-14 |
-| Módulo Cambios de turno | HU-10, HU-13 |
-| Planificador de tareas | HU-10, HU-15, HU-17 |
+| Módulo Turnos y programación | HU-05, HU-06, HU-07, HU-08 |
+| Motor de validación de conflictos | HU-06, HU-09, HU-12 |
+| Disponibilidad | Requerido por HU-06, HU-07, HU-14, HU-16 |
+| Módulo Asistencia e incumplimientos | HU-14, HU-15, HU-16 |
+| Módulo Novedades | HU-10, HU-11, HU-13 |
+| Módulo Cambios de turno | HU-09, HU-12 |
+| Planificador de tareas | HU-09, HU-14, HU-16 |
 | Auditoría | Todas |
-| Notificaciones | HU-02, HU-03, HU-07, HU-10, HU-13, HU-17 |
+| Notificaciones | HU-02, HU-03, HU-06, HU-09, HU-12, HU-16 |
 | Acceso a datos | Todas |
 
 
@@ -64,10 +64,10 @@
 
 **Historias de usuario relacionadas**
 
-- **HU-06 Creación de turnos:** `CatalogoTurnos`, con `Turno` y `Descanso`.
-- **HU-07 Asignación de turnos:** `ProgramacionSemanal`, con `Semana` y `Asignacion`.
-- **HU-08 Horarios por sucursal:** `ConsultaHorarios.mallaSemanal()` y la consulta `MallaSemanal`.
-- **HU-09 Ver horario asignado:** `ConsultaHorarios.miHorario()` y la consulta `HorarioEmpleado`.
+- **HU-05 Creación de turnos:** `CatalogoTurnos`, con `Turno` y `Descanso`.
+- **HU-06 Asignación de turnos:** `ProgramacionSemanal`, con `Semana` y `Asignacion`.
+- **HU-07 Horarios por sucursal:** `ConsultaHorarios.mallaSemanal()` y la consulta `MallaSemanal`.
+- **HU-08 Ver horario asignado:** `ConsultaHorarios.miHorario()` y la consulta `HorarioEmpleado`.
 
 ### 4.3 Módulo Autenticación
 
@@ -100,9 +100,9 @@
 
 **Historias de usuario relacionadas**
 
-- **HU-07 Asignación de turnos:** el Motor rechaza asignar en un día no disponible.
-- **HU-08 Horarios por sucursal:** la malla marca el día no disponible.
-- **HU-15 Marcar asistencia** y **HU-17 Notificaciones de incumplimientos:** no se marca ni se evalúa ese día.
+- **HU-06 Asignación de turnos:** el Motor rechaza asignar en un día no disponible.
+- **HU-07 Horarios por sucursal:** la malla marca el día no disponible.
+- **HU-14 Marcar asistencia** y **HU-16 Notificaciones de incumplimientos:** no se marca ni se evalúa ese día.
 
 ### 4.5 Motor de validación de conflictos
 
@@ -118,9 +118,9 @@
 
 **Historias de usuario relacionadas**
 
-- **HU-07 Asignación de turnos:** `cadenaAsignacion` valida cada asignación.
-- **HU-10 Solicitar cambio de turno:** `cadenaIntercambio` filtra los turnos elegibles.
-- **HU-13 Aprobar cambios de turno:** la misma cadena revalida el intercambio al aprobar.
+- **HU-06 Asignación de turnos:** `cadenaAsignacion` valida cada asignación.
+- **HU-09 Solicitar cambio de turno:** `cadenaIntercambio` filtra los turnos elegibles.
+- **HU-12 Aprobar cambios de turno:** la misma cadena revalida el intercambio al aprobar.
 
 ### 4.6 Módulo Asistencia e incumplimientos
 
@@ -136,9 +136,9 @@
 
 **Historias de usuario relacionadas**
 
-- **HU-15 Marcar asistencia:** `MarcacionEmpleado` y la entidad `Marca`.
-- **HU-16 Asistencia (supervisor):** `RegistroSupervisor`.
-- **HU-17 Notificaciones de incumplimientos:** `Incumplimientos` y la entidad `Incumplimiento`.
+- **HU-14 Marcar asistencia:** `MarcacionEmpleado` y la entidad `Marca`.
+- **HU-15 Asistencia (supervisor):** `RegistroSupervisor`.
+- **HU-16 Notificaciones de incumplimientos:** `Incumplimientos` y la entidad `Incumplimiento`.
 
 ### 4.7 Módulo Novedades
 
@@ -154,9 +154,9 @@
 
 **Historias de usuario relacionadas**
 
-- **HU-11 Reportar novedades:** `ReporteNovedades` usa `CreadorNovedadEmpleado`.
-- **HU-12 Ver novedades:** `BandejaNovedades`.
-- **HU-14 Novedades de empleado:** `RegistroNovedadSupervisor` usa `CreadorNovedadSupervisor`.
+- **HU-10 Reportar novedades:** `ReporteNovedades` usa `CreadorNovedadEmpleado`.
+- **HU-11 Ver novedades:** `BandejaNovedades`.
+- **HU-13 Novedades de empleado:** `RegistroNovedadSupervisor` usa `CreadorNovedadSupervisor`.
 
 ### 4.8 Módulo Cambios de turno
 
@@ -176,8 +176,8 @@
 
 **Historias de usuario relacionadas**
 
-- **HU-10 Solicitar cambio de turno:** `SolicitudesCambio`.
-- **HU-13 Aprobar cambios de turno:** `AprobacionCambios`.
+- **HU-09 Solicitar cambio de turno:** `SolicitudesCambio`.
+- **HU-12 Aprobar cambios de turno:** `AprobacionCambios`.
 
 ### 4.9 Planificador de tareas
 
@@ -193,9 +193,9 @@
 
 **Historias de usuario relacionadas**
 
-- **HU-10 Solicitar cambio de turno:** `vencerSolicitudes()`.
-- **HU-15 Marcar asistencia:** `marcarPendientesDeCierre()`.
-- **HU-17 Notificaciones de incumplimientos:** `generarIncumplimientosDeInicio()` y `avisarTurnosSinMarcaDeFin()`.
+- **HU-09 Solicitar cambio de turno:** `vencerSolicitudes()`.
+- **HU-14 Marcar asistencia:** `marcarPendientesDeCierre()`.
+- **HU-16 Notificaciones de incumplimientos:** `generarIncumplimientosDeInicio()` y `avisarTurnosSinMarcaDeFin()`.
 
 ### 4.10 Notificaciones
 
@@ -213,7 +213,7 @@
 
 - **HU-02 Recuperación de clave:** `enviarEnlaceRecuperacion()`.
 - **HU-03 Creación de empleados:** `enviarCorreoActivacion()`.
-- **HU-07 Asignación de turnos:** `avisarPublicacion()`.
-- **HU-10 Solicitar cambio de turno** y **HU-13 Aprobar cambios de turno:** `avisarSolicitud()`.
-- **HU-17 Notificaciones de incumplimientos:** `avisarIncumplimiento()`.
+- **HU-06 Asignación de turnos:** `avisarPublicacion()`.
+- **HU-09 Solicitar cambio de turno** y **HU-12 Aprobar cambios de turno:** `avisarSolicitud()`.
+- **HU-16 Notificaciones de incumplimientos:** `avisarIncumplimiento()`.
 
